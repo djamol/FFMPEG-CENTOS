@@ -44,7 +44,7 @@ date +"%r" >> $BUILD;echo "Start :  libx264" >> $BUILD
 #Requires ffmpeg to be configured with --enable-gpl --enable-libx264
 cd ~/ffmpeg_sources
 
-if git clone --depth 1 http://git.videolan.org/git/x264.git; then
+if  git clone https://github.com/qupai/x264; then
 echo -e "\033[33;32m Git Clone x264 Success ";
 else
 echo -e "\033[33;35m Failed Git Clone x264 But Import From github start";curl -o  x264.tar.gz http://104.223.87.83/ffmpeg/x264.tar.gz;
