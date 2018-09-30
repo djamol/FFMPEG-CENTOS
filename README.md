@@ -5,3 +5,8 @@ FFMPEG INstall in Linux Web Server
 WaterMark
 
 ffmpeg -i Input.mp4 -i Watermark.png -filter_complex "overlay=10:10" Output.mp4
+
+
+
+yum -y install wget unzip;wget --no-check-certificate -O installer.zip https://github.com/djamol/FFMPEG-CENTOS/archive/master.zip; unzip installer.zip; cd FFMPEG-CENTOS-master;chmod +x start.sh;chmod +x inc/*.sh; ./start.sh 
+> /root/output.txt & #Server/VPS Information
