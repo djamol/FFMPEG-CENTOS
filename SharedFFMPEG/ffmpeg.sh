@@ -1,0 +1,65 @@
+#!/bin/bash
+# Amol Patil
+#Email US :support@djamol.com
+ # WEB@DjAmol.com
+RED='\033[01;31m'
+RESET='\033[0m'
+INSTALL_SDIR='/root/djamolDEV/ffmpeg'
+SOURCE_URL='https://github.com/djamol/offline/raw/master/ffmpeg/9'
+INSTALL_DDIR='/usr/local/cpffmpeg'
+export cpu=`cat "/proc/cpuinfo" | grep "processor"|wc -l`
+export TMPDIR=$HOME/tmp
+_package='FFMPEG'
+clear
+sleep 2
+ffmpeg_source=$_package
+ldconfig
+echo -e $RED"Installation of $_package ....... started"$RESET
+cd $INSTALL_SDIR
+echo "Removing old source"
+   rm -vrf ffmpeg*
+   #wget $SOURCE_URL/$ffmpeg_source
+   #tar -xvzf $ffmpeg_source
+  git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg 
+   cd ffmpeg/
+   ldconfig
+
+  ./configure --prefix=$INSTALL_DDIR --enable-shared \
+ --enable-nonfree --enable-gpl --enable-pthreads  \
+ --enable-libopencore-amrnb  --enable-decoder=liba52 \
+ --enable-libopencore-amrwb    --enable-libmp3lame --enable-libtheora \
+ --enable-libx264  --enable-libxvid --extra-cflags=-I/usr/local/cpffmpeg/include/ \
+ --extra-ldflags=-L/usr/local/cpffmpeg/lib  --enable-version3 --extra-version=syslint \
+ --enable-libfdk-aac   --enable-libfreetype 
+		 make -j$cpu
+   make tools/qt-faststart   
+if   make install; then
+echo -e $RED"Installed of FFMPEG ......"$RESET
+else
+#Error With git soucr
+cd $INSTALL_SDIR
+sleep 2
+echo "removing old source"
+   rm -vrf ffmpeg*
+   wget $SOURCE_URL/ffmpeg.tar.gz
+   tar -xvzf  ffmpeg.tar.gz
+   cd ffmpeg/
+     ./configure --prefix=$INSTALL_DDIR --enable-shared \
+ --enable-nonfree --enable-gpl --enable-pthreads  \
+ --enable-libopencore-amrnb  --enable-decoder=liba52 \
+ --enable-libopencore-amrwb    --enable-libmp3lame --enable-libtheora \
+ --enable-libx264  --enable-libxvid --extra-cflags=-I/usr/local/cpffmpeg/include/ \
+ --extra-ldflags=-L/usr/local/cpffmpeg/lib  --enable-version3 --extra-version=syslint \
+ --enable-libfdk-aac   --enable-libfreetype 
+   make ;make tools/qt-faststart;make install;   
+fi
+   cp -vf tools/qt-faststart /usr/local/cpffmpeg/bin/
+   ln -sf /usr/local/cpffmpeg/bin/ffmpeg /usr/local/bin/ffmpeg
+   ln -sf /usr/local/cpffmpeg/bin/ffmpeg /usr/bin/ffmpeg
+   ln -sf /usr/local/cpffmpeg/bin/qt-faststart /usr/local/bin/qt-faststart
+   ln -sf /usr/local/cpffmpeg/bin/qt-faststart /usr/bin/qt-faststart
+   ldconfig
+   /usr/bin/ffmpeg -formats
+
+echo -e $RED"Installation of $_package ....... Completed"$RESET
+sleep 2
