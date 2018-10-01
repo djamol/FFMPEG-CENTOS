@@ -20,15 +20,25 @@ Enable Shared your execute from php code
 example code:
 ```
 <?php
-$ffmpegPath = exec('which ffmpeg');
-//$ffprobe = exec('ffmpeg -v');
-echo $ffmpegPath.'<br>';
+$ffmpegPath = exec('which ffmpeg');//(get string):=ffmpeg install path 
+//$output = shell_exec('ffmpeg -formats');
+echo 'Path:'.$ffmpegPath.'<br>';
+//echo 'Formats:<pre>'.$output.'</pre><br>';
+exec($ffmpegPath.' -formats',$output,$status);
+    foreach($output AS $o)
+    {
+            echo $o , "<br/>";
+    }
+
 $srcFile ='video.mp4';
 $waterm ='128.png';
-$destFile ='v3.mp4';
-//exec($ffmpegPath . " -i " . $srcFile . " -i " . $waterm . ' -filter_complex "overlay=10:10" ' . $destFile);
-?>
+$destFile ='v32.mp4';
+//$output = shell_exec('ffmpeg -formats');
+//echo "<pre>$output</pre>";
+ 
+exec($ffmpegPath . " -i " . $srcFile . " -i " . $waterm . ' -filter_complex "overlay=10:10" ' . $destFile,$output,$status);
 
+?>
 ```
 
 Testing Some commands
