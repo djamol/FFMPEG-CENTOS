@@ -29,7 +29,7 @@ echo -e "Hire a cpanel/direcadmin support plan $GREEN @ 50% $RESET discount."
 echo -e "Hire a semidedicated team for managing your servers$GREEN  @ 50% $RESET discount."
 echo -e "Setup a dedicated support team$GREEN  @ 50%  $RESET discount."
 echo ""
-echo -e "Log on to \033[4mhttp://syslint.com$RESET for  getting  the above discount coupon, or"
+echo -e "Log on to \033[4mhttp://djamol.com$RESET for  getting  the above discount coupon, or"
 echo -e "Skype  us @ \033[1m \033[4m SyslintSkype$RESET   for placing an order with this discount."
 echo ""
 echo "This offer is only for you !!!"
@@ -47,3 +47,28 @@ else
         echo "                  You need admin privilege for installing this applications"
 fi
 
+echo -e $RED"
+                        :rvri                     
+                  :vJUJYri:::::i::                
+            .sDgEJi                 r7i           
+         .KQX7.                        .L:        
+       iRRs.        5vsvv7v7Yv            Kr      
+     :gd5.         5Yv7LYL777I.             M     
+    PbuI  ..      ru7rrv:77rrr5              Q7   
+   QUYI. .        I7r7vr .srir7j              BJ  
+  g2LYj          ULr7rS   17rirJ:              Rr 
+  EY7JL         i1r7rj:    2rrirU              KS 
+ sUvvvI.        57rr7U     7LrrivJ             r1.
+.1sv7vss       2v7r7J       sriiiJ:            r7:
+:jjv77r7L     ru777vY       :7rirr2            7i:
+ uJvriBMvI:   KL7vr:vuUIUI1urririrru           :r:
+  Zvi1BBEiK2i:ii7:...jI2IUI11Lririrvr         ..X 
+  gJ5BYB:i.iUYr:..rJ:         Jririrv7        .ur 
+   DZQBu : 7Yvv77777j.        iYriiiirjr:...:iUY  
+    5q: ...v:7Ls7v7uvU:        is7iriri77vvvvSr   
+     :SYJ:::::. Iqr :7U.        .rLrrrrirrrsU     
+       vq1vri.  Er   u75.         .::iirrJJ.      
+         1JvJv.Ii  rBB:.i.    . .   ..r7i         
+        LRbbPZbEKI .BR   s:....:ir7Lr:            
+                  :......ir.....                 
+"$RESET

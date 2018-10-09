@@ -14,11 +14,24 @@ if [ -e "/scripts/rebuildhttpdconf" ];then
 	/scripts/rebuildhttpdconf
 fi
 clear
+echo -e '
+ ▒█░▒░▓█░█▒░▒▒█░█▓░▒░█▓   █████▒    ▓█ ▒█▓▓█▓ ██████ ▓████▒░█░      ░█████░▒████▓ ▓█████░ 
+ ░▓ █▓▓█ ▓ ██▒█░▓░▓█░█▓   ▓▒  █▓    ▒█ ▒▓▓▓█▓ ▓░█▓▒█░▓▒  █▓ ▓       ░█░  ▓ ▒▓  ▓█ ▓▒▓█▒█▒ 
+ ▒█▒█▓▓█░█▓▓█▒█▒█▓▓█▒█▓   █▓  █▓░▓░ ▓█ ██▒▒█▓░█▒█▓▒█░██  █▓░█▒  ░   ▒█▒ ░▓ ██  ██ █▓▓█░█▒ 
+ ░█████▓ ██████ ▓█████░▓█ █████░░█████ █▓  █▓░█▒░░▒█ ▓████▒░█████▒█▓ █████ ▒████▓ █▓░▒░█▒ 
+';
+echo -e "$GREEN 
+# Powered By DjAmol Group Inc         #
+# Email : Support@djamol.com          #
+# Website : www.djamol.com            #
+# Copyright By PatilWeb.com           #
+# IG:PatilWeb FB:PatilWeb TW:PatilWeb #
+$RESET";
 
 echo " "
 echo " "
 echo "The ffmpeg and dependency package installation has  been completed. You can use the following"
-echo "paths for the major binary locations. Make sure to configure it in your conversion scripts too."
+echo "paths for the major binary locations. (Powered ByDjAmolGroup) Make sure to configure it in your conversion scripts too."
 echo ""
 which {ffmpeg,mplayer,mencoder,flvtool2,MP4Box,yamdi}
 echo " "
