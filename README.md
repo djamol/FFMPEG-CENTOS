@@ -37,7 +37,9 @@ $destFile ='v32.mp4';
 //echo "<pre>$output</pre>";
  
 exec($ffmpegPath . " -i " . $srcFile . " -i " . $waterm . ' -filter_complex "overlay=10:10" ' . $destFile,$output,$status);
-
+//Animation left to right watermark logo
+//FFMPEG WATERMARK EVERY 2 mins from left to right or vice versa
+exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='if(gte(t,1), -w+(t-1)*200, NAN)':(main_h-overlay_h)/2" birds4.mp4');
 ?>
 ```
 
