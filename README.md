@@ -36,10 +36,14 @@ $destFile ='v32.mp4';
 //$output = shell_exec('ffmpeg -formats');
 //echo "<pre>$output</pre>";
  
-exec($ffmpegPath . " -i " . $srcFile . " -i " . $waterm . ' -filter_complex "overlay=10:10" ' . $destFile,$output,$status);
+//exec($ffmpegPath . " -i " . $srcFile . " -i " . $waterm . ' -filter_complex "overlay=10:10" ' . $destFile,$output,$status);
 //Animation left to right watermark logo
 //FFMPEG WATERMARK EVERY 2 mins from left to right or vice versa
-exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='if(gte(t,1), -w+(t-1)*200, NAN)':(main_h-overlay_h)/2" birds4.mp4');
+//exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='if(gte(t,1), -w+(t-1)*200, NAN)':(main_h-overlay_h)/2" birds4.mp4');
+exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='."'if(gte(t,1), -w+(t-1)*200, NAN)'".':(main_h-overlay_h)/2" mobile.mp4 2>&1', $output, $return_var);
+var_dump($return_var);
+echo "return_var is: $return_var" . "\n";
+var_dump($output);
 ?>
 ```
 
