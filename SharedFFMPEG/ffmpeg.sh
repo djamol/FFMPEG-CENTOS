@@ -55,8 +55,8 @@ cd $INSTALL_SDIR
 sleep 2
 echo "removing old source"
    rm -vrf ffmpeg*
-   wget $SOURCE_URL/ffmpeg.tar.gz
-   tar -xvzf  ffmpeg.tar.gz
+   wget $SOURCE_URL/ffmpeg.zip;wget $SOURCE_URL/ffmpeg2.zip
+   unzip ffmpeg.zip;unzip ffmpeg2.zip;
    cd ffmpeg/
      ./configure --prefix=$INSTALL_DDIR --enable-shared \
  --enable-nonfree --enable-gpl --enable-pthreads  \
