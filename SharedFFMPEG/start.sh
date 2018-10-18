@@ -142,6 +142,9 @@ sh yasm.sh
 sh nasm.sh
 #xvid
 sh xvid.sh
+#x265
+sh x265.sh
+
 #x264
 sh x264.sh
 #re2c
