@@ -35,7 +35,16 @@ echo "Removing old source"
 	cd x264/
 	./configure  --prefix=$INSTALL_DDIR --enable-shared --disable-asm
 	make -j$cpu
+	if   make install; then
+echo -e $RED"Installed of x264 ......"$RESET
+else
+ wget $SOURCE_URL/x264.tar.gz;
+ tar xvzf x264.tar.gz;
+ cd x264/
+	./configure  --prefix=$INSTALL_DDIR --enable-shared --disable-asm
+	make -j$cpu
 	make install
+fi
 echo -e $RED"
                         :rvri                     
                   :vJUJYri:::::i::                
