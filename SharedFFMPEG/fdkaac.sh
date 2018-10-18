@@ -35,7 +35,17 @@ cd fdk-aac/
 	./autogen.sh
 	./configure  --prefix=$INSTALL_DDIR
 	make -j$cpu
+	if   make install; then
+echo -e $RED"Installed of fdk-aac ......"$RESET
+else
+ wget $SOURCE_URL/fdk-aac.tar.gz;
+ tar xvzf fdk-aac.tar.gz;
+cd fdk-aac/
+	./autogen.sh
+	./configure  --prefix=$INSTALL_DDIR
+	make -j$cpu
 	make install
+fi
 echo -e $RED"
                         :rvri                     
                   :vJUJYri:::::i::                
