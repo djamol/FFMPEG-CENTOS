@@ -57,7 +57,7 @@ echo "removing old source"
    rm -vrf ffmpeg*
    wget $SOURCE_URL/ffmpeg.zip;wget $SOURCE_URL/ffmpeg2.zip
    unzip ffmpeg.zip;unzip ffmpeg2.zip;
-   cd ffmpeg/
+   cd ffmpeg/;ldconfig;chmod +x configure;
      ./configure --prefix=$INSTALL_DDIR --enable-shared \
  --enable-nonfree --enable-gpl --enable-pthreads  \
  --enable-libopencore-amrnb  --enable-decoder=liba52 \
@@ -65,6 +65,14 @@ echo "removing old source"
  --enable-libx264  --enable-libxvid --extra-cflags=-I/usr/local/cpffmpeg/include/ \
  --extra-ldflags=-L/usr/local/cpffmpeg/lib  --enable-version3 --extra-version=syslint \
  --enable-libfdk-aac   --enable-libfreetype 
+ 
+    # . : current path/current direcoryt	
+    #-type: File type to look for, here "file"
+    #-iname: Ignore case in the name
+    #"*.sh": Globbing, telling the find command to search for files with ".sh" extension
+    #-exec chmod +x {}: This tells the find command to carry out a chmod command on each found file. Making each executable
+    #\;: Indicating end of command
+   find . -type f -iname "*.sh" -exec chmod +x {} \;
    make ;make tools/qt-faststart;make install;   
 fi
    cp -vf tools/qt-faststart /usr/local/cpffmpeg/bin/
