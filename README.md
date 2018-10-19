@@ -93,27 +93,46 @@ Note: The -hide_banner option is used to hide a copyright notice shown my ffmpeg
 ```ffmpeg -i video.mp4 -i subtitles.srt -map 0 -map 1 -c copy -c:v libx264 -crf 23 -preset veryfast video-output.mkv```
 
 &#x1F53D;Encode a video sequence for the iPpod/iPhone
+
 Explanations :
+
     Source : source_video.avi
+    
     Audio codec : aac
+    
     Audio bitrate : 128kb/s
+    
     Video codec : mpeg4
+    
     Video bitrate : 1200kb/s
+    
     Video size : 320px par 180px
+    
     Generated video : final_video.mp4
+
 ```ffmpeg -i source_video.avi input -acodec aac -ab 128kb -vcodec mpeg4 -b 1200kb -mbd 2 -flags +4mv+trell -aic 2 -cmp 2 -subcmp 2 -s 320x180 -title X final_video.mp4```
 
 &#x1F53D;Encode video for the PSP
+
 Explanations :
+
     Source : source_video.avi
+
     Audio codec : aac
+
     Audio bitrate : 32kb/s
+    
     Video codec : xvid
+    
     Video bitrate : 1200kb/s
+    
     Video size : 320px par 180px
+    
     Generated video : final_video.mp4
+    
 ```ffmpeg -i source_video.avi -b 300 -s 320x240 -vcodec xvid -ab 32 -ar 24000 -acodec aac final_video.mp4```
 &#x1F53D;Compress .avi to SVCD mpeg2
+
 NTSC format:
 
 ```ffmpeg -i video_origine.avi -target ntsc-svcd video_finale.mpg```
