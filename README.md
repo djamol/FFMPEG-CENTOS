@@ -5,7 +5,8 @@ Root Required
 
 Enable Shared your execute from php code
 
-Install Login SSH And Copy Below Command And run IT
+
+&#x1F536;Install Login SSH And Copy Below Command And run IT
 
 ```
 yum -y install wget unzip;wget --no-check-certificate -O installer.zip https://github.com/djamol/FFMPEG-CENTOS/archive/master.zip; unzip installer.zip; cd FFMPEG-CENTOS-master;cd SharedFFMPEG;chmod +x *.sh; ./start.sh 
@@ -13,10 +14,11 @@ yum -y install wget unzip;wget --no-check-certificate -O installer.zip https://g
 
 > /root/output.txt & 
 
-Root Required
 
-Enable Shared your execute from php code
+&#x1F536;Root Required
 
+
+&#x1F536;Enable Shared your execute from php code
 example code:
 ```
 <?php
@@ -48,42 +50,49 @@ var_dump($output);
 ?>
 ```
 
-Testing Some commands
+&#x1F53D;Testing Some commands
 ```
 <?php
 exec ('ffmpeg -i video.avi 2>&1', $output, $return_var);
 var_dump($output);
 ?>
 ```
-WaterMark
+&#x1F53D;WaterMark
 ```ffmpeg -i Input.mp4 -i Watermark.png -filter_complex "overlay=10:10" Output.mp4```
 
-Getting infos from a video file
+&#x1F53D;Getting infos from a video file
 ```ffmpeg -i video.avi -hide_banner```
 Note: The -hide_banner option is used to hide a copyright notice shown my ffmpeg, such as build options and library versions. This option can be used to suppress printing this information.
 
-Split a video into images
+&#x1F53D;Split a video into images
 ```ffmpeg -i video.flv image%d.jpg```
 
-Convert images into a video
+&#x1F53D;Convert images into a video
 ```$ ffmpeg -f image2 -i image%d.jpg imagestovideo.mpg```
 
-Convert a video into mp3 format/Extract Audio
+&#x1F53D;Convert a video into mp3 format/Extract Audio
 ```ffmpeg -i video.flv -vn -ar 44100 -ac 2 -ab 192 -f mp3 audio.mp3```
 
-Covert flv video file to mpg format
+
+&#x1F53D;Covert flv video file to mpg format
 ```ffmpeg -i video.flv video.mpg```
-Convert mpg video file to flv
+
+&#x1F53D;Convert mpg video file to flv
 ```ffmpeg -i video.mpg -ab 26k -f flv video1.flv```
-Convert avi video file to mpeg
+
+&#x1F53D;Convert avi video file to mpeg
 ```ffmpeg -i video.avi -target pal-dvd -ps 2000000000 -aspect 16:9 video.mpeg```
-Convert video into animated gif
+
+&#x1F53D;Convert video into animated gif
 ```ffmpeg -i video.flv animated.gif.mp4```
-Convert a video to CD or DVD format
+
+&#x1F53D;Convert a video to CD or DVD format
 ```ffmpeg -i video.mpg -target vcd vcd_video.mpg```
-Add subtitles to a Movie
+
+&#x1F53D;Add subtitles to a Movie
 ```ffmpeg -i video.mp4 -i subtitles.srt -map 0 -map 1 -c copy -c:v libx264 -crf 23 -preset veryfast video-output.mkv```
-Encode a video sequence for the iPpod/iPhone
+
+&#x1F53D;Encode a video sequence for the iPpod/iPhone
 Explanations :
     Source : source_video.avi
     Audio codec : aac
@@ -94,7 +103,7 @@ Explanations :
     Generated video : final_video.mp4
 ```ffmpeg -i source_video.avi input -acodec aac -ab 128kb -vcodec mpeg4 -b 1200kb -mbd 2 -flags +4mv+trell -aic 2 -cmp 2 -subcmp 2 -s 320x180 -title X final_video.mp4```
 
-Encode video for the PSP
+&#x1F53D;Encode video for the PSP
 Explanations :
     Source : source_video.avi
     Audio codec : aac
@@ -104,7 +113,7 @@ Explanations :
     Video size : 320px par 180px
     Generated video : final_video.mp4
 ```ffmpeg -i source_video.avi -b 300 -s 320x240 -vcodec xvid -ab 32 -ar 24000 -acodec aac final_video.mp4```
-Compress .avi to SVCD mpeg2
+&#x1F53D;Compress .avi to SVCD mpeg2
 NTSC format:
 
 ```ffmpeg -i video_origine.avi -target ntsc-svcd video_finale.mpg```
