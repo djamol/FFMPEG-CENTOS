@@ -49,6 +49,67 @@ var_dump($output);
 ```
 
 Testing Some commands
-
+```
+<?php
+exec ('ffmpeg -i video.avi 2>&1', $output, $return_var);
+var_dump($output);
+?>
+```
 WaterMark
-ffmpeg -i Input.mp4 -i Watermark.png -filter_complex "overlay=10:10" Output.mp4
+```ffmpeg -i Input.mp4 -i Watermark.png -filter_complex "overlay=10:10" Output.mp4```
+
+Getting infos from a video file
+```ffmpeg -i video.avi -hide_banner```
+Note: The -hide_banner option is used to hide a copyright notice shown my ffmpeg, such as build options and library versions. This option can be used to suppress printing this information.
+
+Split a video into images
+```ffmpeg -i video.flv image%d.jpg```
+
+Convert images into a video
+```$ ffmpeg -f image2 -i image%d.jpg imagestovideo.mpg```
+
+Convert a video into mp3 format/Extract Audio
+```ffmpeg -i video.flv -vn -ar 44100 -ac 2 -ab 192 -f mp3 audio.mp3```
+
+Covert flv video file to mpg format
+```ffmpeg -i video.flv video.mpg```
+Convert mpg video file to flv
+```ffmpeg -i video.mpg -ab 26k -f flv video1.flv```
+Convert avi video file to mpeg
+```ffmpeg -i video.avi -target pal-dvd -ps 2000000000 -aspect 16:9 video.mpeg```
+Convert video into animated gif
+```ffmpeg -i video.flv animated.gif.mp4```
+Convert a video to CD or DVD format
+```ffmpeg -i video.mpg -target vcd vcd_video.mpg```
+Add subtitles to a Movie
+```ffmpeg -i video.mp4 -i subtitles.srt -map 0 -map 1 -c copy -c:v libx264 -crf 23 -preset veryfast video-output.mkv```
+Encode a video sequence for the iPpod/iPhone
+Explanations :
+    Source : source_video.avi
+    Audio codec : aac
+    Audio bitrate : 128kb/s
+    Video codec : mpeg4
+    Video bitrate : 1200kb/s
+    Video size : 320px par 180px
+    Generated video : final_video.mp4
+```ffmpeg -i source_video.avi input -acodec aac -ab 128kb -vcodec mpeg4 -b 1200kb -mbd 2 -flags +4mv+trell -aic 2 -cmp 2 -subcmp 2 -s 320x180 -title X final_video.mp4```
+
+Encode video for the PSP
+Explanations :
+    Source : source_video.avi
+    Audio codec : aac
+    Audio bitrate : 32kb/s
+    Video codec : xvid
+    Video bitrate : 1200kb/s
+    Video size : 320px par 180px
+    Generated video : final_video.mp4
+```ffmpeg -i source_video.avi -b 300 -s 320x240 -vcodec xvid -ab 32 -ar 24000 -acodec aac final_video.mp4```
+Compress .avi to SVCD mpeg2
+NTSC format:
+
+```ffmpeg -i video_origine.avi -target ntsc-svcd video_finale.mpg```
+
+PAL format:
+
+```ffmpeg -i video_origine.avi -target pal-svcd video_finale.mpg```
+
