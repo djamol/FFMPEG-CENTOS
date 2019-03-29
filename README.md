@@ -44,6 +44,11 @@ $destFile ='v32.mp4';
 //exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='if(gte(t,1), -w+(t-1)*200, NAN)':(main_h-overlay_h)/2" birds4.mp4');
 //exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='."'if(gte(t,1), -w+(t-1)*200, NAN)'".':(main_h-overlay_h)/2" mobile.mp4');
 exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='."'if(gte(t,1), -w+(t-1)*200, NAN)'".':(main_h-overlay_h)/2" mobile.mp4 2>&1', $output, $return_var);
+
+// Last ...Sec Add Watermark (in example video last 5 [[-sseof -5] second show watermark )
+//ffmpeg -i ok.mp4 -sseof -5 -copyts -i ok.mp4 -loop 1 -i logo.png -filter_complex "[1][2]overlay=shortest=1[logo];[0][logo]overlay" out.mp4
+
+
 var_dump($return_var);
 echo "return_var is: $return_var" . "\n";
 var_dump($output);
