@@ -56,6 +56,14 @@ exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='."'if(gte(t,1), 
 ffmpeg   -i input1.mp4   -i input2.mp4 \
   -filter_complex '[0:v]pad=iw*2:ih[int];[int][1:v]overlay=W/2:0[vid]'   -map [vid]   -c:v libx264   -crf 23   -preset veryfast   output.mp4
 
+## Merge multiple video files
+#First, create a text file with the filenames.
+#file '1.mp4'
+#file '2.mp4'
+#...
+#file '13.mp4'
+ffmpeg -f concat -i textfile -c copy -fflags +genpts merged.mp4
+
 var_dump($return_var);
 echo "return_var is: $return_var" . "\n";
 var_dump($output);
