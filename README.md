@@ -149,7 +149,8 @@ NTSC format:
 PAL format:
 
 ```ffmpeg -i video_origine.avi -target pal-svcd video_finale.mpg```
-```I found your first sample using logo just perfect for my usage, I made a bit changes so logo will random in full video not just upper left corner
 
-ffmpeg -i v.mp4 -loop 1 -i logo.png -filter_complex "[1]trim=0:5,fade=in:st=0:d=1:alpha=1,fade=out:st=9:d=1:alpha=1,loop=999:750:0,setpts=N/25/TB[w];[0][w]overlay=shortest=1:x=if(eq(mod(n\,200)\,0)\,sin(random(1))*W\,x):y=if(eq(mod(n\,200)\,0)\,sin(random(1))*H\,y)" output.mp4
+I found your first sample using logo just perfect for my usage, I made a bit changes so logo will random in full video not just upper left corner
+
+```ffmpeg -i v.mp4 -loop 1 -i logo.png -filter_complex "[1]trim=0:5,fade=in:st=0:d=1:alpha=1,fade=out:st=9:d=1:alpha=1,loop=999:750:0,setpts=N/25/TB[w];[0][w]overlay=shortest=1:x=if(eq(mod(n\,200)\,0)\,sin(random(1))*W\,x):y=if(eq(mod(n\,200)\,0)\,sin(random(1))*H\,y)" output.mp4```
 
