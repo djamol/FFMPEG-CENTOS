@@ -62,7 +62,7 @@ ffmpeg   -i input1.mp4   -i input2.mp4 \
 #file '2.mp4'
 #...
 #file '13.mp4'
-ffmpeg -f concat -i textfile -c copy -fflags +genpts merged.mp4
+ffmpeg -f concat -i textfile -c copy -fflags +genpts merged.mp4   # If they are not, you can encode the concat. then ffmpeg -f concat -i textfile -fflags +genpts merged.mp4
 
 var_dump($return_var);
 echo "return_var is: $return_var" . "\n";
