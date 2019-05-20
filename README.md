@@ -51,17 +51,10 @@ exec ('ffmpeg -i video.mp4 -i 128.png -filter_complex "overlay='."'if(gte(t,1), 
 
 // Last ...Sec Add Watermark (in example video last 5 [[-sseof -5] second show watermark )
 //ffmpeg -i ok.mp4 -sseof -5 -copyts -i ok.mp4 -loop 1 -i logo.png -filter_complex "[1][2]overlay=shortest=1[logo];[0][logo]overlay" out.mp4
-//Merge Video files  |PLAYE SCREEN two video play same time in divided sceen  
+//Split Screen Video files  |PLAYE SCREEN two video play same time in divided sceen  
 ## |FULL SCREEN|  then play |input1.mp4 input2.mp4 |
-ffmpeg \
-  -i input1.mp4 \
-  -i input2.mp4 \
-  -filter_complex '[0:v]pad=iw*2:ih[int];[int][1:v]overlay=W/2:0[vid]' \
-  -map [vid] \
-  -c:v libx264 \
-  -crf 23 \
-  -preset veryfast \
-  output.mp4
+ffmpeg   -i input1.mp4   -i input2.mp4 \
+  -filter_complex '[0:v]pad=iw*2:ih[int];[int][1:v]overlay=W/2:0[vid]'   -map [vid]   -c:v libx264   -crf 23   -preset veryfast   output.mp4
 
 var_dump($return_var);
 echo "return_var is: $return_var" . "\n";
