@@ -64,5 +64,6 @@ echo ""
 echo -e "$RED"
 echo "**************************************************************************"
 echo -e "$RESET"
+which {ffmpeg,mplayer,mencoder,flvtool2,MP4Box,yamdi}
 
 
