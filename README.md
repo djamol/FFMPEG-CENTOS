@@ -64,6 +64,15 @@ ffmpeg   -i input1.mp4   -i input2.mp4 \
 #file '13.mp4'
 ffmpeg -f concat -i textfile -c copy -fflags +genpts merged.mp4   # If they are not, you can encode the concat. then ffmpeg -f concat -i textfile -fflags +genpts merged.mp4
 
+#Video Random Position Watermark
+#I found your first sample using logo just perfect for my usage, I made a bit changes so logo will random in full video not just upper left corner
+
+    Place logo.png in a random (x ,y) position of the video.
+    Make the logo fade out after 2 secods.
+    Wait 5 seconds and repeat.(]trim=0:5)-change value for wait for repeat show logo another place
+
+ffmpeg -i input.mp4 -loop 1 -i logo.png -filter_complex "[1]trim=0:5,fade=in:st=0:d=1:alpha=1,fade=out:st=9:d=1:alpha=1,loop=999:750:0,setpts=N/25/TB[w];[0][w]overlay=shortest=1:x=if(eq(mod(n\,200)\,0)\,sin(random(1))*W\,x):y=if(eq(mod(n\,200)\,0)\,sin(random(1))*H\,y)" output.mpg
+
 var_dump($return_var);
 echo "return_var is: $return_var" . "\n";
 var_dump($output);
