@@ -195,7 +195,7 @@ else
         echo -e $RED"   Mplayer installation Failed :( , please contact  professional support djamolgroup@gmail.com"$RESET
         echo " "
         echo " "
-        exit
+        
 fi
 
 echo -e "\e[32m########################################\n#### 33 MAIN FFMPEG FRAMEWORK #########\n#############################"
@@ -209,7 +209,7 @@ else
         echo -e $RED"   FFMPEG installation Failed :( ,  please contact  professional support djamolgroup@gmail.com"$RESET
         echo " "
         echo " "
-        exit
+        
 fi
 echo -e "\e[32m########################################\n#### 34 Preset #########\n########################################"
 # preset 
@@ -225,7 +225,7 @@ else
         echo -e $RED"   Mplayer installation Failed :( , please contact  professional support djamolgroup@gmail.com"$RESET
         echo " "
         echo " "
-        exit
+        
 fi
 echo -e "\e[32m########################################\n#### 36 MP4Box #########\n########################################"
 #Mp4Boxh
