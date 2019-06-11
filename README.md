@@ -72,7 +72,8 @@ ffmpeg -f concat -i textfile -c copy -fflags +genpts merged.mp4   # If they are 
     Wait 5 seconds and repeat.(]trim=0:5)-change value for wait for repeat show logo another place
 
 ffmpeg -i input.mp4 -loop 1 -i logo.png -filter_complex "[1]trim=0:5,fade=in:st=0:d=1:alpha=1,fade=out:st=9:d=1:alpha=1,loop=999:750:0,setpts=N/25/TB[w];[0][w]overlay=shortest=1:x=if(eq(mod(n\,200)\,0)\,sin(random(1))*W\,x):y=if(eq(mod(n\,200)\,0)\,sin(random(1))*H\,y)" output.mpg
-
+//Compressed Mp4 Files
+ ffmpeg -i 2.mp4 -vcodec h264 -acodec mp2 output.mp4
 var_dump($return_var);
 echo "return_var is: $return_var" . "\n";
 var_dump($output);
