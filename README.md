@@ -17,7 +17,8 @@ yum -y install wget unzip;wget --no-check-certificate -O installer.zip https://g
 ```
 
 > /root/output.txt & 
-
+Download Video
+youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' http://youtube.com/watch?v=p-tSLdo-QiA
 
 &#x1F536;Root Required
 
