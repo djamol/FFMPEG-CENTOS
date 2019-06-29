@@ -6,9 +6,13 @@ yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-releas
 yum install ffmpeg perl-Image-ExifTool
 ```
 Pathes:
+
 ffmpeg 	/usr/bin/ffmpeg
+
 ffprobe 	/usr/bin/ffprobe
+
 exiftool 	/usr/bin/exiftool
+
 /usr/bin/ffmpeg -version
 
 
