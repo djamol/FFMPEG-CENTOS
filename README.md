@@ -1,7 +1,19 @@
 # FFMPEG-CENTOS
+AuTo INSTALL using nux rpm
+INstallation 
+```yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+yum install ffmpeg perl-Image-ExifTool
+```
+Pathes:
+ffmpeg 	/usr/bin/ffmpeg
+ffprobe 	/usr/bin/ffprobe
+exiftool 	/usr/bin/exiftool
+/usr/bin/ffmpeg -version
+
+
+
 FFMPEG INstall in Linux Web Server
 Root Required
-
 
 Enable Shared your execute from php code
 
